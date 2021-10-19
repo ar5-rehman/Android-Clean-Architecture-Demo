@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- BOTTOM NAVIGATION SIZES -->
+    <item name="spacing_20" type="dimen">20dp</item>
+
+</resources>

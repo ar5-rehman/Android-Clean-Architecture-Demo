@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paris,"
+            android:textColor="#383939"
+            android:textSize="30dp"
+            android:fontFamily="@font/italiana_regular"
+            android:layout_marginTop="11.74dp"
+            android:layout_marginLeft="20.27dp"
+            android:layout_marginRight="220.73dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mercredi 19 mai "
+            android:textSize="10dp"
+            android:layout_marginTop="44.74dp"
+            android:layout_marginLeft="20.27dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#525353"
+            />
+
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:25"
+            android:textSize="10dp"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/date"
+            android:layout_marginTop="44.74dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#525353"
+            />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:text="19°C"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/hour"
+            android:layout_marginTop="17.74dp"
+            android:layout_marginLeft="30.27dp"
+            android:fontFamily="@font/italiana_regular"
+            android:textColor="#525353"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jour couvert"
+            android:textSize="10dp"
+            android:layout_toRightOf="@+id/hour"
+            android:layout_marginTop="44.74dp"
+            android:layout_marginLeft="30.27dp"
+            android:fontFamily="@font/italiana_regular"
+            android:textColor="#525353"
+            />
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/temp"
+            android:visibility="gone"
+            android:layout_marginLeft="220.01dp"
+            android:layout_marginTop="22.24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Risque de pluie : 40%"
+            android:textSize="10dp"
+            android:visibility="gone"
+            android:layout_marginTop="22.24dp"
+            android:layout_marginLeft="234.84dp"
+            android:layout_marginRight="13.16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#525353"
+            />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/chat_circle"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="1dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weatherHourRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hour"
+            android:foregroundGravity="center"
+            tools:listitem="@layout/weather_hourly_details_layout"
+            app:spanCount="2"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:layout_marginTop="10dp"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="40dp"
+            android:layout_height="5dp"
+            android:layout_below="@+id/weatherHourRecyclerView"
+            android:background="@drawable/view_background"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@+id/view"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

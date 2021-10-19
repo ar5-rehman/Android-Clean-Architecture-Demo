@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    tools:context=".ui.view.SearchFragment"
+    android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F7F7F7">
+
+                <TextView
+                    android:id="@+id/topTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/italiana_regular"
+                    android:text="Que voulez-vous découvrir"
+                    android:textColor="#383939"
+                    android:textSize="30sp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/searchLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/searchbar_background"
+                    android:focusable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/topTxt">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="13dp"
+                        android:src="@drawable/search_two" />
+
+                    <EditText
+                        android:id="@+id/searchBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/searchbar_background"
+                        android:focusable="true"
+                        android:hint="@string/searchBarHint"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/recentLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+                    <TextView
+                        android:id="@+id/recentsTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Recents"
+                        android:textColor="#383939"
+                        android:textSize="20sp"
+                        android:visibility="visible" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recentsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/recentsTxt"
+                        android:layout_marginTop="10dp" />
+
+
+                </RelativeLayout>
+
+            <!--    <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:animationCache="true"
+                    app:shimmer_repeat_mode="restart"
+                    app:shimmer_shape="radial"
+                    android:layout_below="@+id/searchLayout"
+                    android:visibility="gone"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <include layout="@layout/search_fragment_placeholder"/>
+
+                        </ScrollView>
+
+                    </RelativeLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/categoriesChipsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/recentLayout"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/subCategoriesChipsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/categoriesChipsRecycler"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/subCategoriesChipsRecycler"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/activitiesTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/searchLayout"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Activities"
+                                android:textColor="#383939"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/seeAllActivities"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/searchLayout"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="right"
+                                android:text="Voir tout"
+                                android:textColor="#D5C8B1"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/activitiesRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp" />
+
+                        <LinearLayout
+                            android:id="@+id/eventsTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Events"
+                                android:textColor="#383939"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/seeAllEvents"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/searchLayout"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="right"
+                                android:text="Voir tout"
+                                android:textColor="#D5C8B1"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/eventsRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp" />
+
+                        <LinearLayout
+                            android:id="@+id/guidesTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Guides"
+                                android:textColor="#383939"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/seeAllGuides"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/searchLayout"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="right"
+                                android:text="Voir tout"
+                                android:textColor="#D5C8B1"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/guidesRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp" />
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- <TextView
+                         android:id="@+id/categoriesTxt"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Categories"
+                         android:textSize="20sp"
+                         android:layout_marginTop="30dp"
+                         android:textColor="#383939"
+                         android:layout_below="@+id/searchLayout"
+                         android:fontFamily="@font/montserrat_medium"/>
+
+                     <androidx.recyclerview.widget.RecyclerView
+                         android:id="@+id/categoryRecycler"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         />
+
+                     <TextView
+                         android:id="@+id/subCategoriesTxt"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Categories"
+                         android:textSize="20sp"
+                         android:layout_marginTop="30dp"
+                         android:textColor="#383939"
+                         android:layout_below="@+id/searchLayout"
+                         android:fontFamily="@font/montserrat_medium"/>
+
+                     <androidx.recyclerview.widget.RecyclerView
+                         android:id="@+id/subcategoryRecycler"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         /-->>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

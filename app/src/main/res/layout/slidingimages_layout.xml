@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    android:padding="1dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/optionLayout"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/option_background">
+
+        <ImageView
+            android:id="@+id/categoryImage"
+            android:layout_width="9.56dp"
+            android:layout_height="13.65dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/option"/>
+
+    </RelativeLayout>
+</RelativeLayout>

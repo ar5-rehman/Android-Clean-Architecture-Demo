@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/layout_background"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_background">
+
+        <com.mann.ouiparisproject.utils.MaskedCardView
+            android:id="@+id/rLayout"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            app:cardPreventCornerOverlap="false"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Sunflower.Card">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="335dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentTop="true" />
+
+                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                    android:id="@+id/worm_dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:dotsColor="@color/black"
+                    app:dotsStrokeColor="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignBottom="@+id/pager"
+                    android:layout_marginBottom="20dp"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="8dp"
+                    app:dotsSpacing="4dp"
+                    app:dotsStrokeWidth="2dp"
+                    />
+
+            </RelativeLayout>
+
+          <!--  <ImageView
+                android:id="@+id/imageSrc"
+                android:layout_width="335dp"
+                android:layout_height="240dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/search_two"/>-->
+
+
+        </com.mann.ouiparisproject.utils.MaskedCardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:orientation="vertical"
+            android:layout_marginTop="13dp"
+            android:layout_below="@id/rLayout"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="#525353"
+                android:text="hsvcjhsvcvas" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/displayCatSubCatIcon"
+                    android:layout_width="9.8dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/bag_icon"/>
+
+                <TextView
+                    android:id="@+id/subTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="hsvcjhsvcvas"
+                    android:textColor="#6F7171"
+                    android:textSize="10dp" />
+
+                <ImageView
+                    android:id="@+id/distanceIcon"
+                    android:layout_width="9.8dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/location_icon_dark"/>
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#6F7171"
+                    android:text="hsvcjhsvcvas"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/workingHour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#F52B32"
+                    android:text="hsvcjhsvcvas"
+                    android:layout_marginLeft="5dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
